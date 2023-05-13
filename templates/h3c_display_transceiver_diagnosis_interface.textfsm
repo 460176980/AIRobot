@@ -1,0 +1,23 @@
+Value PORT (\w+\d+\/\d+\/\d+)
+Value CTEMP ((\-?\d+)(\.\d+)?)
+Value CVoltage ((\-?\d+)(\.\d+)?)
+Value CBIAS ((\-?\d+)(\.\d+)?)
+Value CRX ((\-?\d+)(\.\d+)?)
+Value CTX ((\-?\d+)(\.\d+)?)
+Value HATEMP ((\-?\d+)(\.\d+)?)
+Value HAVoltage ((\-?\d+)(\.\d+)?)
+Value HABIAS ((\-?\d+)(\.\d+)?)
+Value HARX ((\-?\d+)(\.\d+)?)
+Value HATX ((\-?\d+)(\.\d+)?)
+Value LATEMP ((\-?\d+)(\.\d+)?)
+Value LAVoltage ((\-?\d+)(\.\d+)?)
+Value LABIAS ((\-?\d+)(\.\d+)?)
+Value LARX ((\-?\d+)(\.\d+)?)
+Value LATX ((\-?\d+)(\.\d+)?)
+
+
+Start
+  ^${PORT}\s+\w+\s+\w+\s+\S+
+  ^\s+${CTEMP}\s+${CVoltage}\s+${CBIAS}\s+${CRX}\s+${CTX}
+  ^\s+High\s+${HATEMP}\s+${HAVoltage}\s+${HABIAS}\s+${HARX}\s+${HATX}
+  ^\s+Low\s+${LATEMP}\s+${LAVoltage}\s+${LABIAS}\s+${LARX}\s+${LATX} -> Record
